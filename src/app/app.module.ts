@@ -7,15 +7,21 @@ import { MaterialModule } from './material.module';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { HomePageComponent } from './home-page/home-page.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        HeaderComponent
+        HeaderComponent,
+        HomePageComponent,
+        LoginComponent
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
+        FormsModule,
         MaterialModule,
         FlexLayoutModule,
         AppRoutingModule
