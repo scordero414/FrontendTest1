@@ -1,1 +1,20 @@
-<p>login works!</p>
+<div class="body">
+    <div class="login">
+      <form [formGroup]="form" (ngSubmit)="login()">
+        <img src="assets\Images\login.jpg" alt="" class="img" width="200">
+        <h1 class="h3 mb-3 fw-normal">Login</h1>
+        <mat-form-field class="width" appearance="fill">
+            <mat-label>User</mat-label>
+            <input matInput formControlName="username">
+          </mat-form-field>
+          <mat-form-field class="width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password">
+          </mat-form-field>
+          <br>
+          <button type="submit" class="width" mat-raised-button mat-button color="primary" [disabled]="form.invalid">Login</button>
+      </form>
+        
+    </div>
+</div>
+

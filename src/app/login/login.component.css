@@ -1,0 +1,22 @@
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  height: 100%;
+}
+.img {
+    max-width:100%;
+}
+
+.login {
+  width: 100%;
+  max-width: 330px;
+  /* padding: 15px; */
+  margin-top: 10vh;
+  text-align: center;
+}
+
+.width {
+  width: 80%;
+}

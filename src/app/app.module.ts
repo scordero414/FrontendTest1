@@ -7,16 +7,18 @@ import { MaterialModule } from './material.module';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
         HomePageComponent,
-        LoginComponent
+        LoginComponent,
+        DashboardComponent
     ],
     imports: [
         BrowserModule,
@@ -24,7 +26,8 @@ import { LoginComponent } from './login/login.component';
         FormsModule,
         MaterialModule,
         FlexLayoutModule,
-        AppRoutingModule
+        AppRoutingModule,
+        ReactiveFormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
