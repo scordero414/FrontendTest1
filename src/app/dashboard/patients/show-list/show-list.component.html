@@ -1,0 +1,29 @@
+<div fxLayout.xs="column" fxLayout="row wrap" fxLayoutGap="10px" ngClass.gt-xs="ml-10" fxLayoutAlign="center center">
+  <div *ngFor="let patient of dataSource">
+    <mat-card class="margin">
+      <mat-card-header>
+        <mat-card-title>{{patient.name}}</mat-card-title>
+        <mat-card-subtitle>{{patient.breed}}</mat-card-subtitle>
+      </mat-card-header>
+      <div  fxLayoutAlign="center stretch">
+        <img mat-card-image src={{patient.picture}} class="img">
+      </div>
+      <mat-card-content fxLayout="column" fxLayoutAlign="space-around" >
+        <h3>
+            <strong>Contact phone: </strong> {{patient.contactPhone}}
+        </h3>
+        <h3>
+            <strong>Contact person: </strong>
+             {{patient.contactPerson}}
+        </h3>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+
+
+</div>
