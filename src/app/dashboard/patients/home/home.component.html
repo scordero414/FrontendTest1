@@ -1,15 +1,16 @@
 <div>
   <!-- <button mat-raised-button color="accent" class="mt" href="/create">Add Pacient</button> -->
-  <a href="/dashboard/patients/create" mat-raised-button color="accent" class="mt">
-    Add Pacient
+  <a  mat-raised-button color="accent" class="mt" (click)="setShow()">
+    {{!showAdd ? "Add Patient": "Hide"}}
   </a>
-  <div fxLayoutAlign="center center">
+
+  <div *ngIf="showAdd">
+    <app-create (createdPatient)="addPatient($event)"></app-create>
+  </div>
+
+  <div fxLayoutAlign="center center" class="mt">
     <h1 ><strong>List Of Patients</strong> </h1>
 
   </div>
-
-  <!-- <div fxLayoutAlign="center start" class="mt">
-      <h1 class="mat-display-1">List of patients</h1>
-    </div> -->
-  <app-show-list></app-show-list>
+  <app-show-list [dataSource]="patients" (idDelete)="deletePatient($event)"></app-show-list>
 </div>

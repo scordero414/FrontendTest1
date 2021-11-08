@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Patient } from 'src/app/shared/interfaces/patient';
 import { PatientService } from '../patient.service';
 
@@ -13,12 +13,15 @@ import { PatientService } from '../patient.service';
 export class ShowListComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'name', 'breed', 'picture', 'contactPhone', 'contactPerson', 'createdAt'];
-  dataSource!: Patient[];
-
-  constructor(private patientService: PatientService) { }
+  @Input() dataSource!: Patient[];
+  @Output() idDelete = new EventEmitter<number>();
+  constructor() { }
 
   ngOnInit(): void {
-    this.patientService.getPatients().subscribe(patients => this.dataSource = patients);
+  }
+
+  deletePatient(id: number): void {
+    this.idDelete.emit(id);
   }
 
 }

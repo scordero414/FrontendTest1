@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Patient } from 'src/app/shared/interfaces/patient';
+import { PatientService } from '../patient.service';
 
 @Component({
     selector: 'app-create',
@@ -15,7 +16,9 @@ export class CreateComponent implements OnInit {
 
     patient!: Patient;
 
-    constructor(private formBuilder: FormBuilder, private _snackBar: MatSnackBar) { }
+    @Output() createdPatient  = new EventEmitter<Patient>();
+
+    constructor(private formBuilder: FormBuilder, private _snackBar: MatSnackBar, private patientService: PatientService) { }
 
     ngOnInit(): void {
         this.form = this.formBuilder.group({
@@ -37,7 +40,7 @@ export class CreateComponent implements OnInit {
             contactPerson: this.form.value.contactPerson,
             createdAt: new Date()
         }
-        console.log(this.patient);
+        this.createdPatient.emit(this.patient);
     }
 
     handleUpload(event: any) {
@@ -49,6 +52,15 @@ export class CreateComponent implements OnInit {
             this.cardImageBase64 = reader.result as string;
             this.patient = { ...this.patient, picture: reader.result as string };
         };
+    }
+
+    openSnackBar(str: string) {
+        this._snackBar.open(str, "Accept", {
+            duration: 5000,
+            horizontalPosition: 'center',
+            verticalPosition: 'bottom',
+            
+        });
     }
 
 }
