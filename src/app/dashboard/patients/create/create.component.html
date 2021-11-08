@@ -6,7 +6,7 @@
 
     <div>
       <form [formGroup]="form" (ngSubmit)="addPatient()">
-        <h1 >Add patient to the Veterinary!</h1>
+        <h1>Add patient to the Veterinary!</h1>
         <mat-form-field class="width" appearance="outline">
           <mat-label>Name</mat-label>
           <input matInput formControlName="name" type="text">
@@ -34,16 +34,15 @@
           </button>
         </div>
         <ng-container *ngIf="isImageSaved" fxLayoutAlign="center center">
-          <img [src]="cardImageBase64" class="img"/>
-      </ng-container>
-        <button type="submit" class="width mt" mat-raised-button mat-button color="primary"
-          [disabled]="form.invalid">
+          <img [src]="cardImageBase64" class="img" />
+        </ng-container>
+        <button type="submit" class="width mt" mat-raised-button mat-button color="primary" [disabled]="form.invalid">
           Add patient
         </button>
       </form>
     </div>
-    <div>
-      <img src="assets\Images\add.png" alt="" class="img">
+    <div class="mb">
+      <img src="assets\Images\add.png" alt="">
     </div>
 
   </div>

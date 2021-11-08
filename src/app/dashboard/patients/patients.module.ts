@@ -8,6 +8,9 @@ import { ShowListComponent } from './show-list/show-list.component';
 import { MaterialModule } from 'src/app/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { DataService } from 'src/app/data.service';
 
 
 @NgModule({
@@ -22,7 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MaterialModule, 
     FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule ,
   ]
 })
 export class PatientsModule { }

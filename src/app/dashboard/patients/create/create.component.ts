@@ -22,7 +22,6 @@ export class CreateComponent implements OnInit {
             name: ['', [Validators.required]],
             age: ['', [Validators.required]],
             breed: ['', [Validators.required]],
-            // picture: ['', [Validators.required]],
             contactPhone: ['', [Validators.required]],
             contactPerson: ['', [Validators.required]],
         });
@@ -34,7 +33,6 @@ export class CreateComponent implements OnInit {
             name: this.form.value.name,
             age: this.form.value.age,
             breed: this.form.value.breed,
-            // picture: this.form.value.picture,
             contactPhone: this.form.value.conctactPhone,
             contactPerson: this.form.value.contactPerson,
             createdAt: new Date()

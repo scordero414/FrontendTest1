@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { PatientsComponent } from './patients/patients.component';
 import { MaterialModule } from '../material.module';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { DataService } from '../data.service';
 
 
 @NgModule({
@@ -13,7 +16,7 @@ import { MaterialModule } from '../material.module';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    MaterialModule
+    MaterialModule,
   ]
 })
 export class DashboardModule { }

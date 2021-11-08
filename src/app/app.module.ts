@@ -11,6 +11,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { DataService } from './data.service';
 
 @NgModule({
     declarations: [
@@ -26,8 +30,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
         FormsModule,
         MaterialModule,
         FlexLayoutModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        HttpClientInMemoryWebApiModule.forRoot(DataService),
         AppRoutingModule,
-        ReactiveFormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
