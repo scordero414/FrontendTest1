@@ -1,0 +1,26 @@
+.img {
+  max-width: 100%;
+}
+
+.box {
+  padding-top: 5vh;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.width {
+  width: 100%;
+}
+
+.mt {
+  margin-top: 25px;
+}
+.img {
+  margin-top: 25px;
+  width:  250px;
+  height: 250px;
+  border-radius: 20px !important;
+  max-width: 100%;
+}

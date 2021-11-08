@@ -1,1 +1,51 @@
-<p>create works!</p>
+<div>
+  <a routerLink=".." mat-raised-button color="accent" class="mt">
+    Back
+  </a>
+  <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" class="box" fxLayoutAlign="center center">
+
+    <div>
+      <form [formGroup]="form" (ngSubmit)="addPatient()">
+        <h1 >Add patient to the Veterinary!</h1>
+        <mat-form-field class="width" appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" type="text">
+        </mat-form-field>
+        <mat-form-field class="width" appearance="outline">
+          <mat-label>Age</mat-label>
+          <input matInput formControlName="age" type="number">
+        </mat-form-field>
+        <mat-form-field class="width" appearance="outline">
+          <mat-label>Breed</mat-label>
+          <input matInput formControlName="breed" type="text">
+        </mat-form-field>
+        <mat-form-field class="width" appearance="outline">
+          <mat-label>Contact Phone</mat-label>
+          <input matInput formControlName="contactPhone" type="text">
+        </mat-form-field>
+        <mat-form-field class="width" appearance="outline">
+          <mat-label>Contact Person</mat-label>
+          <input matInput formControlName="contactPerson" type="text">
+        </mat-form-field>
+        <div class="width">
+          <button type="button" mat-stroked-button (click)="fileInput.click()">
+            Choose an Image for the pacient.
+            <input hidden (change)="handleUpload($event)" #fileInput type="file" id="file">
+          </button>
+        </div>
+        <ng-container *ngIf="isImageSaved" fxLayoutAlign="center center">
+          <img [src]="cardImageBase64" class="img"/>
+      </ng-container>
+        <button type="submit" class="width mt" mat-raised-button mat-button color="primary"
+          [disabled]="form.invalid">
+          Add patient
+        </button>
+      </form>
+    </div>
+    <div>
+      <img src="assets\Images\add.png" alt="" class="img">
+    </div>
+
+  </div>
+
+</div>

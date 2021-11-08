@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { ShowListComponent } from './show-list/show-list.component';
 import { MaterialModule } from 'src/app/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CommonModule,
     PatientsRoutingModule,
     MaterialModule, 
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule 
   ]
 })
 export class PatientsModule { }
