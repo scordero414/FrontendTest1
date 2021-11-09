@@ -1,1 +1,36 @@
-<p>show-list works!</p>
+<div class="example-action-buttons">
+  <button mat-button (click)="accordion.openAll()">Expand All</button>
+  <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+</div>
+<mat-accordion class="example-headers-align" multi>
+  <div *ngFor="let doctor of dataInput">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="disable_ripple">
+        <mat-panel-title>
+          {{doctor.name}}
+        </mat-panel-title>
+        <mat-panel-description>
+          Info
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div fxLayoutAlign="space-between center">
+        <mat-label>
+          <strong>Contact Phone:
+          </strong>
+          {{doctor.phone}}
+        </mat-label>
+        <mat-label>
+          <strong>Schedule:
+          </strong>
+          {{doctor.schedule}}
+        </mat-label>
+        <button mat-icon-button aria-label="Delete doctor" (click)="deleteDoctor(doctor.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </mat-expansion-panel>
+  </div>
+
+</mat-accordion>

@@ -12,7 +12,7 @@ export class FormComponent implements OnInit {
     
 
     form!: FormGroup;
-    daysOfWeek: string[] = ['Monday', 'Thuesday', 'Wednesday', 'Thrusday', 'Friday', 'Saturday', 'Sunday'];
+    daysOfWeek: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
     @Output() createdDoctor  = new EventEmitter<Doctor>();
 

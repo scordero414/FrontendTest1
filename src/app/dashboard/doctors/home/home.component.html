@@ -1,14 +1,10 @@
 <div>
-  <!-- <a mat-raised-button color="accent" class="mt" (click)="setShow()"> -->
-  <a mat-raised-button color="accent" class="mt">
-    <!-- {{!showAdd ? "Add Patient": "Hide"}} -->
-    Add
+  <a mat-raised-button color="accent" class="mt" (click)="setShow()">
+    <!-- <a mat-raised-button color="accent" class="mt"> -->
+    {{!showAdd ? "Add Doctor": "Hide"}}
   </a>
 
-  <!-- <div *ngIf="showAdd"> -->
-  <div >
-
-    <!-- <app-create (createdPatient)="addPatient($event)"></app-create> -->
+  <div *ngIf="showAdd">
     <app-create (createdDoctorHome)="addDoctor($event)"></app-create>
   </div>
 
@@ -17,5 +13,9 @@
 
   </div>
   <!-- <app-show-list [dataSource]="patients" (idDelete)="deletePatient($event)"></app-show-list> -->
-  <app-show-list></app-show-list>
+  <!-- <ng-container *ngIf="doctors!==undefined"> -->
+    <app-show-list [dataInput]="doctors" (idDelete)="deleteDoctor($event)"></app-show-list>
+
+  <!-- </ng-container> -->
+
 </div>
