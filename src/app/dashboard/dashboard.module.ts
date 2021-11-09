@@ -7,11 +7,13 @@ import { MaterialModule } from '../material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataService } from '../data.service';
+import { DoctorsComponent } from './doctors/doctors.component';
 
 
 @NgModule({
   declarations: [
-    PatientsComponent
+    PatientsComponent,
+    DoctorsComponent
   ],
   imports: [
     CommonModule,

@@ -30,6 +30,15 @@ export class DataService implements InMemoryDbService {
           contactPerson: "Sebastian Cordero",
           createdAt: new Date()
         }
+      ],
+      doctors: [
+        {
+          id: 1,
+          name: "Juan Perez",
+          phone: "31223123213",
+          schedule: ["Monday", "Tuesday"],
+          createdAt: new Date()
+        }
       ]
     }
   }

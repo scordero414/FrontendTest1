@@ -1,0 +1,27 @@
+<form [formGroup]="form" (ngSubmit)="addDoctor()">
+  <!-- <form [formGroup]="form" (ngSubmit)="addPatient()"> -->
+  <h1>Add doctors </h1>
+  <mat-form-field class="width" appearance="outline">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" type="text">
+  </mat-form-field>
+  <mat-form-field class="width" appearance="outline">
+    <mat-label>Phone number</mat-label>
+    <input matInput formControlName="phoneNumber" type="text">
+  </mat-form-field>
+  <!-- <mat-selection-list #select>
+    <mat-list-option *ngFor="let day of daysOfWeek">
+      {{day}}
+    </mat-list-option>
+  </mat-selection-list> -->
+  <mat-label>Schedule:</mat-label>
+  <mat-selection-list formControlName="selectedDays">
+    <mat-list-option *ngFor="let day of daysOfWeek" [value]="day">
+      {{day}}
+    </mat-list-option>
+  </mat-selection-list>
+
+  <button type="submit" class="width mt" mat-raised-button mat-button color="primary" [disabled]="form.invalid">
+    Add patient
+  </button>
+</form>

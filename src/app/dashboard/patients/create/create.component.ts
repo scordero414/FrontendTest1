@@ -18,7 +18,7 @@ export class CreateComponent implements OnInit {
 
     @Output() createdPatient  = new EventEmitter<Patient>();
 
-    constructor(private formBuilder: FormBuilder, private _snackBar: MatSnackBar, private patientService: PatientService) { }
+    constructor(private formBuilder: FormBuilder) { }
 
     ngOnInit(): void {
         this.form = this.formBuilder.group({
@@ -36,7 +36,7 @@ export class CreateComponent implements OnInit {
             name: this.form.value.name,
             age: this.form.value.age,
             breed: this.form.value.breed,
-            contactPhone: this.form.value.conctactPhone,
+            contactPhone: this.form.value.contactPhone,
             contactPerson: this.form.value.contactPerson,
             createdAt: new Date()
         }
@@ -52,15 +52,6 @@ export class CreateComponent implements OnInit {
             this.cardImageBase64 = reader.result as string;
             this.patient = { ...this.patient, picture: reader.result as string };
         };
-    }
-
-    openSnackBar(str: string) {
-        this._snackBar.open(str, "Accept", {
-            duration: 5000,
-            horizontalPosition: 'center',
-            verticalPosition: 'bottom',
-            
-        });
     }
 
 }
