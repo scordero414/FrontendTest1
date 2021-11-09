@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Patient } from 'src/app/shared/interfaces/patient';
-import { PatientService } from '../patient.service';
+import { PatientService } from '../services/patient.service';
 
 
 

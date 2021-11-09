@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Patient } from 'src/app/shared/interfaces/patient';
-import { PatientService } from '../patient.service';
+import { PatientService } from '../services/patient.service';
 
 @Component({
     selector: 'app-create',

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Doctor } from 'src/app/shared/interfaces/doctor';
-import { DoctorsService } from '../doctors.service';
+import { DoctorsService } from '../services/doctors.service';
 
 @Component({
     selector: 'app-home',
