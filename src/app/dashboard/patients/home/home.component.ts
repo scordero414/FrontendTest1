@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
 
     addPatient(patient: Patient): void {
         this.patientService.createPatient(patient).subscribe(response => {
+            console.log(response)
             this.getPatients();
             this.setShow();
         });

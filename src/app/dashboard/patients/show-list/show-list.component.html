@@ -20,6 +20,7 @@
       <mat-card-actions>
         <!-- <button mat-button>Edit</button> -->
         <button mat-button (click)="deletePatient(patient.id)">Delete</button>
+        <app-create-visit [patient]="patient"></app-create-visit>
       </mat-card-actions>
     </mat-card>
   </div>

@@ -21,7 +21,7 @@ export class DataService implements InMemoryDbService {
             },
             {
                 id: 2,
-                name: "Tobby",
+                name: "Tommy",
                 age: 4,
                 breed: "Cocker Spaniel",
                 picture: "https://kakiseni.org/wp-content/uploads/2018/03/250X250.png",

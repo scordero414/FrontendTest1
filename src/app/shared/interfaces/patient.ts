@@ -1,3 +1,5 @@
+import { Visit } from "./visit";
+
 export interface Patient {
     id: number,
     name: string, 
@@ -8,4 +10,5 @@ export interface Patient {
     contactPhone: string, 
     contactPerson: string,
     createdAt: Date
+    visits: Visit[]
 }

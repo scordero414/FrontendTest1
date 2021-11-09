@@ -38,6 +38,7 @@ export class CreateComponent implements OnInit {
             breed: this.form.value.breed,
             contactPhone: this.form.value.contactPhone,
             contactPerson: this.form.value.contactPerson,
+            visits: [],
             createdAt: new Date()
         }
         this.createdPatient.emit(this.patient);
