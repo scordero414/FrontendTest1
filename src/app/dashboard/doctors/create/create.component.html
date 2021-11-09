@@ -5,7 +5,7 @@
   <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" class="box" fxLayoutAlign="center center">
 
     <div>
-      <app-form></app-form>
+      <app-form (createdDoctor)="addDoctor($event)"></app-form>
     </div>
     <div class="mb">
       <img src="assets\Images\doc.jpg" alt="" width="500" height="600">

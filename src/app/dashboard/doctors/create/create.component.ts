@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Doctor } from 'src/app/shared/interfaces/doctor';
+
 
 @Component({
   selector: 'app-create',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateComponent implements OnInit {
 
+  @Output() createdDoctorHome = new EventEmitter<Doctor>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addDoctor(doctor: Doctor): void {
+    // console.log(doctor)
+    this.createdDoctorHome.emit(doctor);
   }
 
 }
