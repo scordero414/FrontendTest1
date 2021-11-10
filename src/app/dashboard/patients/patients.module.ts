@@ -11,7 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataService } from 'src/app/data.service';
-import { ShowComponent } from './visits/show/show.component';
+import { ShowComponent, DialogVisit} from './visits/show/show.component';
 import { CreateVisitComponent, Dialog } from './visits/create-visit/create-visit.component';
 
 
@@ -22,7 +22,9 @@ import { CreateVisitComponent, Dialog } from './visits/create-visit/create-visit
     ShowListComponent,
     ShowComponent,
     CreateVisitComponent,
-    Dialog
+    Dialog,
+    ShowComponent,
+    DialogVisit
   ],
   imports: [
     CommonModule,

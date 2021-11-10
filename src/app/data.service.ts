@@ -18,18 +18,60 @@ export class DataService implements InMemoryDbService {
                 contactPhone: "3017869734",
                 contactPerson: "Sebastian Cordero",
                 createdAt: new Date(),
-                visits: []
+                visits: [
+                    {
+                        date: new Date("2021-11-17T05:00:00.000Z"),
+                        doctor: { id: 3, name: 'John Doe', phone: '1234567890', schedule: ['Wednesday'], createdAt: '2021-11-10T05:12:34.232Z' },
+                        medicationProvided: "The treatment of dogs suffering from food poisoning depends on the severity of their symptoms. There are those who require serum and antibiotics and others who fast for a few days and only drink water until the vomiting and diarrhea subside.",
+                        reason: "Stomach intoxication"
+                    }
+                ]
             },
             {
                 id: 2,
                 name: "Tommy",
                 age: 4,
-                breed: "Cocker Spaniel",
-                picture: "https://kakiseni.org/wp-content/uploads/2018/03/250X250.png",
+                breed: "Pincher",
+                picture: "https://www.feelcats.com/wp-content/uploads/2019/07/pincher-mini-1.jpg",
                 contactPhone: "3017869734",
-                contactPerson: "Sebastian Cordero",
+                contactPerson: "Valeria Vanegas",
                 createdAt: new Date(),
-                visits: []
+                visits: [
+                    {
+                        date: new Date("2021-11-17T05:00:00.000Z"),
+                        doctor: {
+                            "id": 2,
+                            "name": "Pepito Juarez",
+                            "phone": "1234567890",
+                            "schedule": [
+                                "Saturday",
+                                "Tuesday",
+                                "Monday",
+                                "Friday"
+                            ],
+                            "createdAt": "2021-11-10T05:23:10.116Z"
+                        },
+                        medicationProvided: "The treatment of dogs suffering from food poisoning depends on the severity of their symptoms. There are those who require serum and antibiotics and others who fast for a few days and only drink water until the vomiting and diarrhea subside.",
+                        reason: "Paw hurt"
+                    },
+                    {
+                        "date": "2021-11-20T05:00:00.000Z",
+                        "reason": "Infection in one eye",
+                        "medicationProvided": "Conjunctivitis is an infection or inflammation of the conjunctiva. A person may get the infection in one eye or both. Types of conjunctivitis include: Viral: Affects adults more than children and is the most common type of conjunctivitis.",
+                        "doctor": {
+                            "id": 2,
+                            "name": "Pepito Juarez",
+                            "phone": "1234567890",
+                            "schedule": [
+                                "Saturday",
+                                "Tuesday",
+                                "Monday",
+                                "Friday"
+                            ],
+                            "createdAt": "2021-11-10T05:32:46.418Z"
+                        }
+                    }
+                ]
             }
         ];
         const doctors = [
@@ -37,17 +79,24 @@ export class DataService implements InMemoryDbService {
                 id: 1,
                 name: "Juan Perez",
                 phone: "31223123213",
-                schedule: ["Monday", "Tuesday"],
+                schedule: ["Monday", "Tuesday", "Thursday", "Sunday"],
                 createdAt: new Date()
             },
             {
                 id: 2,
                 name: "Pepito Juarez",
                 phone: "1234567890",
-                schedule: ["Saturday", "Tuesday"],
+                schedule: ["Saturday", "Tuesday", "Monday", "Friday"],
+                createdAt: new Date()
+            },
+            {
+                id: 3,
+                name: "John Doe",
+                phone: "1234567890",
+                schedule: ["Wednesday"],
                 createdAt: new Date()
             }
         ];
-        return {patients, doctors}
+        return { patients, doctors }
     }
 }

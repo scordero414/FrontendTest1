@@ -17,10 +17,11 @@
              {{patient.contactPerson}}
         </h3>
       </mat-card-content>
-      <mat-card-actions>
+      <mat-card-actions fxLayoutAlign="space-between center">
         <!-- <button mat-button>Edit</button> -->
-        <button mat-button (click)="deletePatient(patient.id)">Delete</button>
+        <button mat-button (click)="deletePatient(patient.id)"><mat-icon>delete</mat-icon></button>
         <app-create-visit [patient]="patient"></app-create-visit>
+        <app-show [patient]="patient"></app-show>
       </mat-card-actions>
     </mat-card>
   </div>

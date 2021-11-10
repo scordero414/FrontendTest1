@@ -1,0 +1,12 @@
+.width {
+  width: 100%;
+}
+
+.mat-label {
+  word-break: break-all;
+}
+
+.pad {
+    padding-top: 5%;
+    margin-top: 5%;
+}

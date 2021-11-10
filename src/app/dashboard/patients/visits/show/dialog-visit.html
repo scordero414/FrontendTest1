@@ -1,0 +1,56 @@
+<h1 mat-dialog-title>{{data.patient.name}} Visits</h1>
+<div mat-dialog-content fxLayout="column" fxLayoutAlign="center center" class="mat">
+  <div *ngFor="let visit of visits">
+    <mat-accordion class="width">
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header class="disable_ripple">
+          <mat-panel-title>
+            Fecha: {{visit.date.toLocaleString().split(' ')[0]}}
+          </mat-panel-title>
+          <!-- <mat-panel-description>
+            Download
+            <button (click)="exportAsXLSX(visit)">
+              <mat-icon>account_circle</mat-icon>
+            </button>
+          </mat-panel-description> -->
+        </mat-expansion-panel-header>
+
+        <div fxLayout="column">
+          <!-- <div fxLayoutAlign="space-between center"> -->
+          <mat-label class="mat-label">
+            <strong>Reason:
+            </strong>
+            {{visit.reason}}
+          </mat-label>
+          <mat-label class="mat-label">
+            <strong>Medication provided:
+            </strong>
+            {{visit.medicationProvided}}
+          </mat-label>
+          <mat-label class="mat-label">
+            <strong>Doctor:
+            </strong>
+            {{visit.doctor.name}}
+          </mat-label>
+
+          <mat-label class="mat-label">
+            <strong>Download Excel:
+            </strong>
+            <button mat-icon-button (click)="exportAsXLSX(visit)">
+              <mat-icon>file_download</mat-icon>
+            </button>
+          </mat-label>
+          
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+  </div>
+
+
+  <!-- <div class="example-action-buttons" >
+    <button mat-button (click)="accordion.openAll()">Expand All</button>
+    <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+  </div> -->
+</div>

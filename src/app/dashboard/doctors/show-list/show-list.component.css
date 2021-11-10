@@ -31,3 +31,7 @@ mat-expansion-panel-header hover {
 .content {
     justify-content: space-between !important;
 }
+
+.mat-label {
+  word-break: break-all;
+}
