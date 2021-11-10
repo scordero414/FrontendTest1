@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { catchError, map, retry, tap } from 'rxjs/operators';
 import { Doctor } from 'src/app/shared/interfaces/doctor';
 
 @Injectable({
@@ -22,6 +22,20 @@ export class DoctorsService {
             })
         );
     }
+
+    getDoctorByScheduleDay(day: string): Observable<Doctor[]> {
+        return this.http
+          .get<Doctor[]>(`${this.doctorsUrl}/?schedule.includes(${day})`)
+          .pipe(
+            map(data => {
+              return data.filter(filt => filt.schedule.includes(day));
+            }),
+            catchError((error: HttpErrorResponse) => {
+              console.error(error);
+              return throwError(error);
+            })
+          );
+      }
 
     createDoctor(doctor: Doctor): Observable<Doctor> {
 

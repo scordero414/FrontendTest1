@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { catchError, map, retry } from 'rxjs/operators';
 import { Patient } from 'src/app/shared/interfaces/patient';
 
 @Injectable({
@@ -23,8 +23,10 @@ export class PatientService {
     );
   }
 
+  
+
   createPatient(patient: Patient): Observable<Patient> {
-    
+
     return this.http.post<Patient>(this.patientsUrl, patient).pipe(
       catchError((error: HttpErrorResponse) => {
         console.error(error);
